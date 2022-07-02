@@ -12,7 +12,7 @@ const GradientMotionedText: React.FC<GradientMotionedTextProps> = ({
   return (
     <span
       className={reactClassName(
-        'bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-orange-400',
+        'bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-orange-400/90 to-yellow-400/75',
         query.type ?? '',
         query.size ?? ''
       )}

@@ -21,7 +21,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   return (
     <View id={`member-card-for-${name}`} className="">
       <article className="w-full max-w-xs mx-auto sm:mx-0 relative">
-        <article className="absolute top-0 left-0 w-full rounded-full ease-in-out transform scale-90 lg:hover:scale-100 h-full bg-gradient-to-r from-orange-400/0 to-red-400/0 lg:hover:from-orange-400/70 lg:hover:to-red-400/70 z-10 transition-all text-stone-100/0 lg:hover:text-stone-100 flex flex-col justify-center items-center cursor-pointer">
+        <article className="absolute top-0 left-0 w-full rounded-full ease-in-out transform scale-95 lg:hover:scale-100 h-full bg-gradient-to-r from-orange-400/0 to-red-400/0 lg:hover:from-orange-400/70 lg:hover:to-red-400/70 z-10 transition-all text-stone-100/0 lg:hover:text-stone-100 flex flex-col justify-center items-center cursor-pointer">
           <p className="capitalize">{position}</p>
           <h3 className="font-pop text-2xl font-bold mb-4 pb-4">{name}</h3>
           <ul className="flex items-center space-x-2">

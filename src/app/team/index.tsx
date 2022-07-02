@@ -10,10 +10,10 @@ const Hero: React.FC = () => {
     <section className="w-full relative max-w-6xl mx-auto p-8 py-28 lg:px-0 min-h-screen grid grid-cols-1 gap-8 place-content-center">
       <View id="team-hero" className="">
         <article className="w-full h-full flex flex-col justify-center items-start">
-          <h2 className="font-bold font-pop text-2xl md:text-3xl lg:text-4xl mb-4">
+          <h2 className="font-bold font-pop text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-4">
             Team <GradientMotionedText query={{}} />
           </h2>
-          <p className="font-pop leading-7 md:text-lg lg:text-xl lg:leading-8">
+          <p className="font-pop leading-7 md:text-lg lg:text-xl lg:leading-8 mb-4">
             Our great products come from collaborations between talented &
             respectful team members from photographers, designers, project
             managers, to developers.
