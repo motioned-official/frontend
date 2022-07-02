@@ -4,7 +4,7 @@ import Footer from '@/layouts/footer';
 import type { NextPage } from 'next';
 import React from 'react';
 
-const MotionServices: NextPage = () => {
+const MotionedServices: NextPage = () => {
   return (
     <React.Fragment>
       <PageSEO title="Services" />
@@ -13,4 +13,4 @@ const MotionServices: NextPage = () => {
     </React.Fragment>
   );
 };
-export default MotionServices;
+export default MotionedServices;

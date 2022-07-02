@@ -5,7 +5,7 @@ import Footer from '@/layouts/footer';
 import type { NextPage } from 'next';
 import React from 'react';
 
-const MotionHome: NextPage = () => {
+const MotionedHome: NextPage = () => {
   return (
     <React.Fragment>
       <PageSEO title="Home" />
@@ -14,4 +14,4 @@ const MotionHome: NextPage = () => {
     </React.Fragment>
   );
 };
-export default MotionHome;
+export default MotionedHome;

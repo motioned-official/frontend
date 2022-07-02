@@ -9,7 +9,8 @@ const Hero: React.FC = () => {
       <View id="services-hero" className="w-full">
         <article className="w-full flex flex-col justify-center items-start p-8 lg:px-0">
           <h2 className="font-bold font-pop text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-4 lg:mb-8 2xl:mb-12">
-            Services that <GradientMotionedText query={{}} /> provides for you
+            Services that <GradientMotionedText query={{}} /> provides{' '}
+            <span className="inline-block">for you</span>
           </h2>
           <p className="font-pop leading-7 md:text-lg lg:text-xl lg:leading-8 mb-8">
             <strong>Motioned</strong> provide expertise in the following fields.
