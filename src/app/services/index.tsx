@@ -2,19 +2,16 @@ import Link from 'next/link';
 import ServiceCard from './components/service-card';
 import { Services } from './static';
 import View from '@/components/view';
+import GradientMotionedText from '@/components/gradient-motioned';
 const Hero: React.FC = () => {
   return (
     <section className="w-full max-w-6xl mx-auto min-h-screen grid grid-cols-1 pt-28 gap-8 lg:gap-12 place-content-center">
       <View id="services-hero" className="w-full">
         <article className="w-full flex flex-col justify-center items-start p-8 lg:px-0">
-          <h2 className="font-bold font-pop text-2xl mb-4">
-            Services that{' '}
-            <span className="text-6xl bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-orange-500/75 to-yellow-500/50">
-              Motioned
-            </span>{' '}
-            provides for you
+          <h2 className="font-bold font-pop text-2xl md:text-3xl lg:text-4xl mb-4">
+            Services that <GradientMotionedText query={{}} /> provides for you
           </h2>
-          <p className="leading-7 text-lg">
+          <p className="font-pop leading-7 md:text-lg lg:text-xl lg:leading-8 mb-8">
             <strong>Motioned</strong> provide expertise in the following fields.
             We have numerous experiences & resources to help your business reach
             its goals. If you are not sure where to start, we recommend that you

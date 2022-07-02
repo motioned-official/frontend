@@ -8,9 +8,7 @@ const MotionHome: NextPage = () => {
   return (
     <React.Fragment>
       <PageSEO title="Home" />
-      <View id="home-hero" className="w-full">
-        <Hero />
-      </View>
+      <Hero />
     </React.Fragment>
   );
 };

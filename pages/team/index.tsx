@@ -1,16 +1,16 @@
-import Hero from '@/app/services';
+import Hero from '@/app/team';
 import PageSEO from '@/components/page-seo';
 import Footer from '@/layouts/footer';
 import type { NextPage } from 'next';
 import React from 'react';
 
-const MotionServices: NextPage = () => {
+const MotionedTeam: NextPage = () => {
   return (
     <React.Fragment>
-      <PageSEO title="Services" />
+      <PageSEO title="Team" />
       <Hero />
       <Footer />
     </React.Fragment>
   );
 };
-export default MotionServices;
+export default MotionedTeam;

@@ -40,10 +40,8 @@ const Modal: React.FC<ModalProps> = ({ toggleSetter, toggleState }) => {
       </div>
       <span
         className={reactClassName(
-          'flex text-white/60 flex-col items-start absolute bottom-8 left-1/2 transform transition-all space-y-4',
-          toggleState
-            ? '-translate-x-1/2 opacity-100'
-            : 'translate-x-0 opacity-0'
+          'flex text-white/60 flex-col items-start absolute bottom-8 left-1/2 -translate-x-1/2  transform transition-all space-y-4',
+          toggleState ? 'opacity-100' : 'opacity-0'
         )}
       >
         <span className="font-sand font-bold text-xl">Presented By</span>
