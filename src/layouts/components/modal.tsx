@@ -3,7 +3,8 @@ import Link from 'next/link';
 import { Dispatch, SetStateAction } from 'react';
 import reactClassName from 'src/libs/reactClassName';
 import { Routes } from '../static';
-
+import Image from 'next/image';
+import MyLogo from 'public/motioned_square_logo.png';
 interface ModalProps {
   toggleState: boolean;
   toggleSetter: Dispatch<SetStateAction<boolean>>;
@@ -13,8 +14,8 @@ const Modal: React.FC<ModalProps> = ({ toggleSetter, toggleState }) => {
   return (
     <aside
       className={reactClassName(
-        'lg:hidden w-11/12 z-50 transition-all fixed h-screen top-0 left-0 transform bg-stone-600 backdrop-blur-lg border-r border-stone-800',
-        toggleState ? 'translate-x-0' : '-translate-x-[100%]'
+        'lg:hidden z-50 transition-all fixed h-[100vh] top-0 left-0 transform bg-stone-600 backdrop-blur-lg border-r border-stone-800',
+        toggleState ? 'translate-x-0 w-11/12' : '-translate-x-[100%] '
       )}
     >
       <div className="flex justify-between items-center">
@@ -39,14 +40,21 @@ const Modal: React.FC<ModalProps> = ({ toggleSetter, toggleState }) => {
       </div>
       <span
         className={reactClassName(
-          'flex text-white/30 flex-col items-center absolute bottom-8 left-1/2 transform transition-all',
+          'flex text-white/60 flex-col items-start absolute bottom-8 left-1/2 transform transition-all space-y-4',
           toggleState
             ? '-translate-x-1/2 opacity-100'
             : 'translate-x-0 opacity-0'
         )}
       >
-        <span>Presented By</span>
-        <Logo className="font-bold" />
+        <span className="font-sand font-bold text-xl">Presented By</span>
+        <article className="w-full max-w-xs mx-auto relative">
+          <Image
+            src={MyLogo}
+            alt="Motioned Gif"
+            className="z-0 opacity-90"
+            layout="responsive"
+          />
+        </article>
       </span>
     </aside>
   );

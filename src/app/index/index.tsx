@@ -28,9 +28,14 @@ const Hero: React.FC = () => {
         <span className="absolute z-10 p-4 rounded-lg flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
           <strong className="font-pop text-9xl text-white p-8 ">M</strong>
         </span>
-        <Image src={MyGif} alt="Motioned Gif" className="z-0 opacity-30" />
+        <Image
+          src={MyGif}
+          alt="Motioned Gif"
+          className="z-0 opacity-30"
+          layout="responsive"
+        />
       </article>
-      <footer className="absolute w-full bottom-8 lg:bottom-28 left-8 lg:left-0 text-stone-400 font-sand font-medium">
+      <footer className="fixed w-full bottom-0 left-0 text-stone-400 font-sand font-medium pb-8 lg:pb-16">
         <p className="mb-4 lg:mb-2 text-center">
           <strong>Motioned</strong> &copy; 2022. All rights reserved.
         </p>

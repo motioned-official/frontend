@@ -16,7 +16,7 @@ const PageSEO: React.FC<PageSEOProps> = ({ title }) => {
         content="Web Design, Web Development, Web Engineering, Business Website, Portfolio Website, E-Commerce"
       />
       <title>
-        Motioned - Sucecssfuly Web Design & Engineering For Your Customers &
+        Motioned - Successful Web Design & Engineering For Your Customers &
         Clients {title ? `| ${title}` : ''}
       </title>
     </Head>

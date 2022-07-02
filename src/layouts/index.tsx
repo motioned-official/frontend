@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div id="layout" className="w-full relative ">
+    <div id="layout" className="w-full relative min-h-screen">
       <Header />
       <main>{children}</main>
     </div>
