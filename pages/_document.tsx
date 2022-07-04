@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link rel="shortcut icon" href="public/motioned_square_logo.png" />
       </Head>
-      <body className="w-full bg-white text-stone-600">
+      <body className="w-full text-white bg-stone-600">
         <Main />
         <NextScript />
       </body>

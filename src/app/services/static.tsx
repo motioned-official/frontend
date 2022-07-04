@@ -24,7 +24,7 @@ const Services: ServicesDataType = [
   {
     title: 'Development',
     description:
-      'From scratch to 100% hand-produced code to implement front-end application you and your business desired.',
+      'From scratch to 100% hand-produced business, ecommerce, platform site development.',
     link: '/services/2',
     icon: <FaLaptopCode />,
   },

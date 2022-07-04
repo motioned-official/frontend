@@ -34,10 +34,10 @@ const Modal: React.FC<ModalProps> = ({ toggleSetter, toggleState }) => {
             <Link key={index} href={route.href}>
               <a
                 className={reactClassName(
-                  'font-pop text-lg hover hover:text-stone-700 transition-all',
+                  'font-pop text-lg hover  hover:text-stone-700 transition-all',
                   pathname === route.href
-                    ? 'text-stone-600 pl-4 border-l-2 border-stone-600'
-                    : 'border-l-0 pl-0'
+                    ? 'text-stone-900 pl-4 border-l-2 border-stone-600'
+                    : 'border-l-0 pl-0 text-stone-400'
                 )}
               >
                 {route.textContent}
@@ -48,7 +48,7 @@ const Modal: React.FC<ModalProps> = ({ toggleSetter, toggleState }) => {
       </div>
       <span
         className={reactClassName(
-          'flex text-stone-400 flex-col items-center absolute bottom-8 left-1/2 -translate-x-1/2  transform transition-all space-y-4 pb-8',
+          'flex text-stone-600 flex-col items-center absolute bottom-8 left-1/2 -translate-x-1/2  transform transition-all space-y-4 pb-8',
           toggleState ? 'opacity-100' : 'opacity-0'
         )}
       >

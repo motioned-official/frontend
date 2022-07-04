@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <ul className="flex items-center justify-center space-x-4">
           <li>
             <a
-              className="text-2xl transition-all hover hover:text-blue-500"
+              className="text-2xl transition-all hover lg:hover:text-stone-100"
               href="https://linkedin.com/company/motioned-official"
             >
               <BsLinkedin />
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
           </li>
           <li>
             <a
-              className="text-2xl transition-all hover hover:text-pink-500"
+              className="text-2xl transition-all hover lg:hover:text-stone-100"
               href="https://instagram.com/motioned-official"
             >
               <BsInstagram />
@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           </li>
           <li>
             <a
-              className="text-2xl transition-all hover hover:text-black"
+              className="text-2xl transition-all hover lg:hover:text-stone-100"
               href="https://github.com/motioned-official"
             >
               <BsGithub />

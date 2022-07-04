@@ -13,9 +13,9 @@ const Header: React.FC = () => {
   }, [router]);
   return (
     <React.Fragment>
-      <header className="fixed top-0 z-40 w-full bg-white/90">
+      <header className="fixed top-0 z-40 w-full bg-stone-600/90">
         <section className="flex justify-between items-center">
-          <Logo className="font-bold px-8 py-8 lg:py-4 font-serif text-stone-600" />
+          <Logo className="font-bold px-8 py-8 lg:py-4 font-serif text-white" />
           <Toggler toggleState={toggle} toggleSetter={setToggle} />
           <RouteBar />
         </section>

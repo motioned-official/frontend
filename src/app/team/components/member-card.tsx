@@ -19,7 +19,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   links,
 }) => {
   return (
-    <View id={`member-card-for-${name}`} className="">
+    <View id={`member-card-for-${name.split(' ').join('')}`} className="">
       <article className="w-full max-w-xs mx-auto sm:mx-0 relative">
         <article className="absolute top-0 left-0 w-full rounded-full ease-in-out transform scale-95 lg:hover:scale-100 h-full bg-gradient-to-r from-orange-400/0 to-red-400/0 lg:hover:from-orange-400/70 lg:hover:to-red-400/70 z-10 transition-all text-stone-100/0 lg:hover:text-stone-100 flex flex-col justify-center items-center cursor-pointer">
           <p className="capitalize">{position}</p>
@@ -40,7 +40,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
         <Image
           src={img}
           alt={`${name} is a ${position} at Team Motioned.`}
-          className="-z-10 opacity-75 transition-all hover hover:opacity-100 relative lg:rounded-full"
+          className="-z-10 opacity-75 transition-all hover hover:opacity-100 relative rounded-full"
           layout="responsive"
         />
         <article className="mt-8 w-full sm:mx-0 rounded-full ease-in-out transition-all flex lg:hidden flex-col justify-center items-center">
