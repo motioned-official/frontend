@@ -1,17 +1,16 @@
-import Hero from '@/app/index';
-import PageSEO from '@/components/page-seo';
-import View from '@/components/view';
-import Footer from '@/layouts/footer';
-import type { NextPage } from 'next';
-import React from 'react';
+import type {NextPage} from "next";
+import React from "react";
+import SEO from "@/seo/index";
+import Hero from "@/components/index/hero";
+import Work from "@/components/index/work";
 
 const MotionedHome: NextPage = () => {
   return (
     <React.Fragment>
-      <PageSEO title="Home" />
+      <SEO title="Home" />
       <Hero />
-      <Footer />
+      <Work />
     </React.Fragment>
-  );
+  )
 };
 export default MotionedHome;
