@@ -30,7 +30,7 @@ const MemberCard: React.FC<MotionedTeam> = ({
           </p>
         </div> */}
         {links && (
-          <ul className="p-4 bg-light/50 backdrop-blur-md flex justify-center items-center space-x-4 rounded-t-xl transition-all hover lg:hover:bg-light/90">
+          <ul className="px-4 bg-light/50 backdrop-blur-md flex justify-center items-center space-x-4 rounded-t-xl transition-all hover lg:hover:bg-light/90">
             {links.github && (
               <li>
                 <a

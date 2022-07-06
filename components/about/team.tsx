@@ -8,18 +8,21 @@ import MemberCard from './member-card';
 
 const Team: React.FC = () => {
   return (
-    <Motioned.container id="about-team" className="w-full h-max bg-light">
+    <Motioned.container
+      id="about-team"
+      className="w-full bg-light flex flex-col justify-center"
+    >
       <Motioned.wrapper className="w-full flex flex-col-reverse lg:grid lg:grid-cols-8 xl:grid-cols-12">
         <>
-          <Motioned.container className="h-max lg:h-full flex flex-col justify-center pt-16 pb-16 px-8 lg:px-16 lg:py-28 lg:col-span-5 xl:col-span-7">
-            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+          <Motioned.content className="flex flex-col justify-center pt-16 pb-16 px-8 lg:px-16 lg:py-28 lg:col-span-5 xl:col-span-7">
+            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {teams.map((team, index) => (
                 <MemberCard {...team} key={index} />
               ))}
             </ul>
-          </Motioned.container>
-          <Motioned.container className="h-full flex flex-col justify-center lg:col-span-3 xl:col-span-5 relative">
-            <Motioned.content className="px-8 pt-16 pb-16 lg:px-16 lg:py-12 w-full h-full flex flex-col justify-center mx-auto backdrop-blur-lg lg:rounded-l-xl bg-gradient-to-b lg:bg-gradient-to-r from-tangerine/80 to-sunflower/80">
+          </Motioned.content>
+          <Motioned.container className="flex flex-col justify-center lg:col-span-3 xl:col-span-5">
+            <Motioned.wrapper className="px-8 pt-16 pb-16 lg:px-16 lg:py-12 w-full h-full flex flex-col justify-center mx-auto backdrop-blur-lg lg:rounded-l-xl bg-gradient-to-b lg:bg-gradient-to-r from-tangerine/80 to-sunflower/80">
               <>
                 <Motioned.content>
                   <>
@@ -43,7 +46,7 @@ const Team: React.FC = () => {
                   </>
                 </Motioned.content>
               </>
-            </Motioned.content>
+            </Motioned.wrapper>
           </Motioned.container>
         </>
       </Motioned.wrapper>

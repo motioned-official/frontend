@@ -3,7 +3,7 @@ import { motion, Variants } from 'framer-motion';
 const ContentVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 15,
+    y: 10.5,
   },
   visible: {
     opacity: 1,
@@ -20,7 +20,7 @@ const Content: React.FC<MotionedComponentProps> = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 0.65 }}
+      transition={{ duration: 0.55, type: 'spring' }}
       viewport={{ once: true }}
       variants={ContentVariants}
       className={className ? className : ''}

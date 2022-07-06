@@ -35,7 +35,7 @@ const Hero: React.FC<ServicesHeroProps> = ({ clickHandler }) => {
           <Motioned.content className="flex items-center justify-center">
             <button
               onClick={clickHandler}
-              className="inline-block border-l-0 w-full lg:w-max bg-sunflower rounded-full lg:rounded-none text-center lg:hover:border-light lg:hover:border-l-8 lg:hover:pl-4 py-3 lg:bg-dark text-dark lg:text-light shadow-md font-sand font-bold text-lg md:text-lg lg:text-2xl lg:hover:animate-pulse transition-all hover lg:hover:bg-dark/70 transform lg:hover:translate-x-2"
+              className="inline-block border-l-0 w-full lg:w-max bg-clip-text text-transparent bg-gradient-to-r  from-ocean to-melon lg:bg-clip-content lg:from-dark rounded-none text-center lg:hover:border-light lg:hover:border-l-8 lg:hover:pl-4 lg:bg-dark lg:text-light font-sand font-bold text-lg md:text-lg lg:text-2xl lg:hover:animate-pulse transition-all hover lg:hover:bg-dark/70 transform lg:hover:translate-x-2"
             >
               Select The Service To Explore
             </button>
