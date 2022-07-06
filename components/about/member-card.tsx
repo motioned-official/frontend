@@ -1,4 +1,4 @@
-import Image, { ImageLoader } from 'next/image';
+// import Image, { ImageLoader } from 'next/image';
 import Motioned from '../motioned';
 import { BsGithub, BsLinkedin, BsPerson } from 'react-icons/bs';
 const MemberCard: React.FC<MotionedTeam> = ({
@@ -11,11 +11,11 @@ const MemberCard: React.FC<MotionedTeam> = ({
   return (
     <Motioned.content className="w-full bg-transparent rounded-xl overflow-hidden transition-all">
       <>
-        <img
+        {/* <img
           className="w-full rounded-full transition-all hover lg:hover:shadow-2xl lg:hover:shadow-light mb-4"
           src={image}
           alt={`${name} profile image`}
-        />
+        /> */}
         <div className="mb-4 ">
           <h4 className="font-bold font-pop text-2xl lg:text-3xl mb-2 text-dark text-center">
             {name}
@@ -29,38 +29,40 @@ const MemberCard: React.FC<MotionedTeam> = ({
             {bio}
           </p>
         </div> */}
-        <ul className="p-4 bg-light/50 backdrop-blur-md flex justify-center items-center space-x-4 rounded-t-xl transition-all hover lg:hover:bg-light/90">
-          {links.github && (
-            <li>
-              <a
-                className="transition-all text-lg lg:text-xl lg:hover:opacity-50"
-                href={links.github}
-              >
-                <BsGithub />
-              </a>
-            </li>
-          )}
-          {links.linkedin && (
-            <li>
-              <a
-                className="transition-all text-lg lg:text-xl lg:hover:opacity-50"
-                href={links.linkedin}
-              >
-                <BsLinkedin />
-              </a>
-            </li>
-          )}
-          {links.personal && (
-            <li>
-              <a
-                className="transition-all text-lg lg:text-xl lg:hover:opacity-50"
-                href={links.personal}
-              >
-                <BsPerson />
-              </a>
-            </li>
-          )}
-        </ul>
+        {links && (
+          <ul className="p-4 bg-light/50 backdrop-blur-md flex justify-center items-center space-x-4 rounded-t-xl transition-all hover lg:hover:bg-light/90">
+            {links.github && (
+              <li>
+                <a
+                  className="transition-all text-xl lg:text-2xl lg:hover:opacity-50"
+                  href={links.github}
+                >
+                  <BsGithub />
+                </a>
+              </li>
+            )}
+            {links.linkedin && (
+              <li>
+                <a
+                  className="transition-all text-xl lg:text-2xl lg:hover:opacity-50"
+                  href={links.linkedin}
+                >
+                  <BsLinkedin />
+                </a>
+              </li>
+            )}
+            {links.personal && (
+              <li>
+                <a
+                  className="transition-all text-lg lg:text-xl lg:hover:opacity-50"
+                  href={links.personal}
+                >
+                  <BsPerson />
+                </a>
+              </li>
+            )}
+          </ul>
+        )}
       </>
     </Motioned.content>
   );

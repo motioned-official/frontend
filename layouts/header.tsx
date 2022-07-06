@@ -104,10 +104,7 @@ const Header: React.FC = () => {
             <Link href={route.href} key={index}>
               <a
                 className={reactClassName(
-                  'inline-block capitalize text-lg transition-all hover hover:text-dark/50',
-                  router.pathname.includes(route.href)
-                    ? 'pl-2 border-l-4 border-dark/90 font-bold'
-                    : 'pl-0 border-l-0 font-medium'
+                  'inline-block capitalize text-lg transition-all hover hover:text-dark/50'
                 )}
               >
                 {route.title}
@@ -121,9 +118,12 @@ const Header: React.FC = () => {
         className={reactClassName(
           'top-0 w-full z-30 backdrop-blur-sm transition-all transform',
           router.pathname !== '/' ? 'fixed' : 'sticky',
-          modalView
-            ? 'bg-light/0 -translate-y-full'
-            : 'bg-light/90 translate-y-0'
+          router.pathname.includes('/services')
+            ? 'bg-dark/95'
+            : modalView
+            ? 'bg-light/0'
+            : 'bg-light/90',
+          modalView ? '-translate-y-full' : 'translate-y-0'
         )}
       >
         <section className="w-full px-8 py-6 lg:px-16 flex justify-between items-center">
@@ -142,7 +142,12 @@ const Header: React.FC = () => {
           >
             <button
               onClick={onClickModalView}
-              className="px-5 pb-1 border-b-2 border-dotted text-lg border-dark/50 text-dark/50 font-sand font-semibold transition-all hover lg:hover:border-dark/30 lg:hover:text-dark/30"
+              className={reactClassName(
+                'px-5 pb-1 border-b-2 border-dotted text-lg font-sand font-semibold transition-all hover ',
+                router.pathname.includes('/services')
+                  ? 'border-light/75 text-light/75'
+                  : 'border-dark/50 text-dark/50'
+              )}
             >
               Menu
             </button>
@@ -150,27 +155,51 @@ const Header: React.FC = () => {
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {Routes.map((route, index) => (
               <Link href={route.href} key={index}>
-                <a className="inline-block capitalize text-lg font-medium transition-all hover hover:text-dark/50">
+                <a
+                  className={reactClassName(
+                    'inline-block capitalize text-lg font-medium transition-all hover hover:text-dark/50',
+                    router.pathname.includes('/services')
+                      ? 'text-light/80 hover:text-light/50'
+                      : 'hover:text-dark/50'
+                  )}
+                >
                   {route.title}
                 </a>
               </Link>
             ))}
-            <nav className="flex items-center space-x-2 lg:space-x-3">
+            <nav
+              className={reactClassName(
+                'flex items-center space-x-2 lg:space-x-3 transition-all rounded-full',
+                router.pathname.includes('/services')
+                  ? 'bg-melon p-4'
+                  : 'bg-transparent'
+              )}
+            >
+              <span
+                className={reactClassName(
+                  'font-pop font-medium transition-all',
+                  router.pathname.includes('/services')
+                    ? 'text-dark border-l-0 border-transparent pl-0'
+                    : 'pl-4 border-l-4 border-dark/70 text-dark/70'
+                )}
+              >
+                Connect With Us
+              </span>
               <a
                 href="https://github.com/motioned-official"
-                className="transition-all text-dark/70 text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
+                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
               >
                 <BsGithub />
               </a>
               <a
                 href="https://linkedin.com/company/motioned-official"
-                className="transition-all text-dark/70 text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
+                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
               >
                 <BsLinkedin />
               </a>
               <a
                 href="https://instagram.com/motioned_official"
-                className="transition-all text-dark/70 text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
+                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
               >
                 <BsInstagram />
               </a>

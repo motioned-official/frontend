@@ -39,8 +39,8 @@ declare interface MotionedTeam {
   name: string;
   position: string;
   bio: string;
-  image: string | StaticImageData;
-  links: {
+  image?: string | StaticImageData;
+  links?: {
     github?: string;
     linkedin?: string;
     personal?: string;
