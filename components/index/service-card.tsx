@@ -18,7 +18,7 @@ const ServiceCard: React.FC<MotionedService> = ({
     router.push(to);
   };
   return (
-    <Motioned.content className="w-full h-full flex flex-col rounded-xl bg-light/10 backdrop-blur-md text-dark/50 lg:hover:text-dark/70 py-8 transition-all hover lg:hover:bg-dark/10">
+    <Motioned.content className="w-full h-full flex flex-col rounded-xl bg-light/10 backdrop-blur-md text-dark/50 lg:hover:text-dark/70 py-8 transition-all hover lg:hover:bg-dark/10 cursor-pointer">
       <>
         <article
           onClick={() => onCardClickRouterPush(url)}
@@ -39,10 +39,10 @@ const ServiceCard: React.FC<MotionedService> = ({
             <button
               onClick={onClickViewMore}
               className={reactClassName(
-                'transition-all px-5 py-2 rounded-full transform hover lg:hover:translate-x-1 lg:hover:border-l-8 lg:hover:text-light font-pop font-medium',
+                'transition-all px-5 py-2 rounded-full transform hover lg:hover:translate-x-1 lg:hover:border-l-8 lg:hover:text-dark border-dark/10 font-pop font-medium',
                 viewMore
-                  ? 'bg-tangerine/70 border-ocean/70'
-                  : 'bg-ocean/70 border-tangerine/70'
+                  ? 'bg-tangerine/70 hover:bg-tangerine/80'
+                  : 'bg-ocean/70 hover:bg-ocean'
               )}
             >
               Read {viewMore ? 'Less' : 'More'}

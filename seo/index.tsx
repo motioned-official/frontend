@@ -12,8 +12,8 @@ const SEO: React.FC<SEOProps> = ({ title }) => {
         content="Web Design, Web Development, Web Engineering, Business Website, Portfolio Website, E-Commerce"
       />
       <title>
-        Motioned - Successful Web Design & Engineering For Your Customers &
-        Clients {title ? `| ${title}` : ''}
+        Success For Your Business & Clients Starts With Motioned{' '}
+        {title === 'Home' ? '' : `| ${title}`}
       </title>
     </Head>
   );
