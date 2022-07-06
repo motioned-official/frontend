@@ -8,7 +8,7 @@ const GradientText: React.FC<MotionedComponentProps> = ({
   return (
     <span
       className={reactClassName(
-        `bg-clip-text text-transparent bg-gradient-to-r from-tangerine to-sunflower`,
+        `bg-clip-text text-transparent bg-gradient-to-r from-ocean to-melon`,
         className ? className : ''
       )}
     >

@@ -22,17 +22,17 @@ const Work: React.FC = () => {
               </h3>
               <div className="flex flex-col space-y-6">
                 <Link href="/services">
-                  <a className="px-8 py-3 rounded-xl bg-sunflower/10 text-tangerine text-lg font-pop font-medium flex justify-between items-center transition-all hover lg:hover:bg-sunflower/20">
+                  <a className="px-8 py-3 rounded-xl bg-melon/10 text-ocean text-lg font-pop font-medium flex justify-between items-center transition-all hover lg:hover:bg-ocean/20">
                     <span>Our Services</span>
-                    <span className="p-2 rounded-xl bg-tangerine">
+                    <span className="p-2 rounded-xl bg-ocean">
                       <GrBusinessService className="text-light" />
                     </span>
                   </a>
                 </Link>
                 <Link href="/works">
-                  <a className="px-8 py-3 rounded-xl bg-tangerine/10 text-sunflower text-lg font-pop font-medium flex justify-between items-center transition-all hover lg:hover:bg-tangerine/20">
+                  <a className="px-8 py-3 rounded-xl bg-ocean/10 text-melon text-lg font-pop font-medium flex justify-between items-center transition-all hover lg:hover:bg-melon/20">
                     <span>Our Works</span>
-                    <span className="p-2 rounded-xl bg-sunflower">
+                    <span className="p-2 rounded-xl bg-melon">
                       <GrWorkshop className="text-light" />
                     </span>
                   </a>

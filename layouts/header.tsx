@@ -29,49 +29,43 @@ const Header: React.FC = () => {
         onClick={onClickModalView}
         className={reactClassName(
           'fixed w-full h-screen flex lg:hidden flex-col justify-end bg-black/50 backdrop-blur-md transition-all',
-          modalView ? 'opacity-100 z-40' : ' opacity-0 -z-40'
+          modalView ? 'opacity-100 z-40' : 'opacity-0 -z-40'
         )}
       >
-        <span
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          className={reactClassName(
-            'relative z-10 top-8 p-4 bg-dark/90 text-light shadow-xl w-max mx-auto rounded-full font-medium text-xl font-pop transition-all transform',
-            modalView ? 'translate-x-0' : '-translate-x-full'
-          )}
-        >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-tangerine to-sunflower">
-            Connect with Us
-          </span>
-        </span>
         <nav
           onClick={(e) => {
             e.stopPropagation();
           }}
           className={reactClassName(
-            'relative z-0 transition-all transform flex justify-between items-center space-x-2 lg:space-x-3 p-8 pt-12  shadow-xl rounded-t-xl',
+            'relative z-0 transition-all transform flex flex-col items-center space-x-2 lg:space-x-3 shadow-xl rounded-t-xl',
             modalView ? 'translate-y-0 bg-light' : 'translate-y-full bg-light/0'
           )}
         >
-          <a
-            href="https://github.com/motioned-official"
-            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
-          >
-            <BsGithub />
-          </a>
-          <a
-            href="https://linkedin.com/company/motioned-official"
-            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
-          >
-            <BsLinkedin />
-          </a>
-          <a
-            href="https://instagram.com/motioned_official"
-            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
-          >
-            <BsInstagram />
-          </a>
+          <section className="w-full flex justify-between items-center mb-8 px-8 pt-8">
+            <a
+              href="https://github.com/motioned-official"
+              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
+            >
+              <BsGithub />
+            </a>
+            <a
+              href="https://linkedin.com/company/motioned-official"
+              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
+            >
+              <BsLinkedin />
+            </a>
+            <a
+              href="https://instagram.com/motioned_official"
+              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
+            >
+              <BsInstagram />
+            </a>
+          </section>
+          <section className="pb-8 px-8">
+            <GradientText className="font-pop text-2xl">
+              <span>Connect With Us.</span>
+            </GradientText>
+          </section>
         </nav>
       </aside>
       <div

@@ -6,7 +6,7 @@ import GoalCard from './goal-card';
 const Hero: React.FC = () => {
   return (
     <Motioned.container id="about-hero" className="w-full lg:h-screen">
-      <Motioned.wrapper className="w-full h-full grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-12">
+      <Motioned.wrapper className="w-full max-w-6xl mx-auto h-full grid grid-cols-1 lg:grid-cols-8 xl:grid-cols-12">
         <>
           <Motioned.container className="h-full flex flex-col justify-center px-8 lg:px-16 py-28 lg:col-span-3 xl:col-span-5">
             <>
@@ -21,11 +21,9 @@ const Hero: React.FC = () => {
                 <p className="text-center lg:text-left font-sand font-medium text-2xl leading-9 lg:text-3xl lg:leading-[3rem] max-w-xl">
                   <span className="inline-block">
                     with{' '}
-                    <strong className="inline-block bg-dark px-4 py-1 rounded-xl ">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-tangerine to-sunflower">
-                        Three Goals
-                      </span>
-                    </strong>{' '}
+                    <GradientText className="bg-dark rounded-xl ">
+                      <span>Three Goals</span>
+                    </GradientText>{' '}
                   </span>
                 </p>
               </Motioned.content>

@@ -11,11 +11,11 @@ const MemberCard: React.FC<MotionedTeam> = ({
   return (
     <Motioned.content className="w-full bg-transparent rounded-xl overflow-hidden transition-all">
       <>
-        {/* <img
-          className="w-full rounded-full transition-all hover lg:hover:shadow-2xl lg:hover:shadow-light mb-4"
-          src={image}
+        <img
+          className="w-full max-w-sm mx-auto rounded-full transition-all hover lg:hover:shadow-2xl lg:hover:shadow-light mb-4"
+          src={image ? image : 'team/No_Image_Profile.png'}
           alt={`${name} profile image`}
-        /> */}
+        />
         <div className="mb-4 ">
           <h4 className="font-bold font-pop text-2xl lg:text-3xl mb-2 text-dark text-center">
             {name}

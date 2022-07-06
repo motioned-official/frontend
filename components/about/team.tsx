@@ -12,24 +12,17 @@ const Team: React.FC = () => {
       id="about-team"
       className="w-full bg-light flex flex-col justify-center"
     >
-      <Motioned.wrapper className="w-full flex flex-col-reverse lg:grid lg:grid-cols-8 xl:grid-cols-12">
+      <Motioned.wrapper className="w-full flex flex-col space-y-16">
         <>
-          <Motioned.content className="flex flex-col justify-center pt-16 pb-16 px-8 lg:px-16 lg:py-28 lg:col-span-5 xl:col-span-7">
-            <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {teams.map((team, index) => (
-                <MemberCard {...team} key={index} />
-              ))}
-            </ul>
-          </Motioned.content>
-          <Motioned.container className="flex flex-col justify-center lg:col-span-3 xl:col-span-5">
-            <Motioned.wrapper className="px-8 pt-16 pb-16 lg:px-16 lg:py-12 w-full h-full flex flex-col justify-center mx-auto backdrop-blur-lg lg:rounded-l-xl bg-gradient-to-b lg:bg-gradient-to-r from-tangerine/80 to-sunflower/80">
+          <Motioned.container className="flex flex-col justify-center">
+            <Motioned.wrapper className="px-8 lg:px-16 py-16 max-w-6xl mx-auto flex flex-col justify-center lg:rounded-t-xl bg-gradient-to-b from-melon via-ocean">
               <>
                 <Motioned.content>
                   <>
                     <h3 className="font-pop text-5xl lg:text-6xl xl:text-7xl text-center mb-4 lg:mb-6 font-bold text-light">
                       Our Team
                     </h3>
-                    <p className="text-light/80 font-medium text-sand text-xl leading-8 lg:text-2xl lg:leading-10 text-center mb-8">
+                    <p className="text-light/90 font-medium text-sand text-xl leading-8 lg:text-2xl lg:leading-10 text-center mb-8">
                       We are dedicated to provide our client&apos; scaleable &
                       sustainable web services for their businesses as
                       efficiently and productively as they need. We bring our
@@ -46,6 +39,15 @@ const Team: React.FC = () => {
                   </>
                 </Motioned.content>
               </>
+            </Motioned.wrapper>
+          </Motioned.container>
+          <Motioned.container className="w-full flex flex-col">
+            <Motioned.wrapper className="w-full max-w-6xl mx-auto px-8 lg:px-0">
+              <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {teams.map((team, index) => (
+                  <MemberCard {...team} key={index} />
+                ))}
+              </ul>
             </Motioned.wrapper>
           </Motioned.container>
         </>

@@ -17,23 +17,18 @@ const Services: React.FC = () => {
       <Motioned.wrapper className="px-8 lg:px-16 py-28">
         <>
           <Motioned.content>
-            <>
-              <GradientText className="font-bold font-pop text-6xl lg:text-7xl flex flex-col mb-4 text-center">
-                <>
-                  <span>Services</span>
-                  <span className="inline-block">That Matters</span>
-                </>
-              </GradientText>
-              <p className="font-pop font-medium text-xl text-dark/70 text-center">
-                We are currently providing various{' '}
-                <strong className="text-dark text-2xl">
-                  web-based services
-                </strong>{' '}
-                to help our client&apos; businesses.
-              </p>
-            </>
+            <GradientText className="font-bold font-pop text-6xl lg:text-7xl flex flex-col mb-4 text-center">
+              <span>Services That Matters</span>
+            </GradientText>
           </Motioned.content>
-          <Motioned.container className="mt-8 border-t pt-8 w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <Motioned.content>
+            <p className="font-pop font-medium text-xl text-dark/70 text-center">
+              We are currently providing various{' '}
+              <strong className="text-dark text-2xl">web-based services</strong>{' '}
+              to help our client&apos; businesses.
+            </p>
+          </Motioned.content>
+          <Motioned.content className="mt-8 border-t pt-8 w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
             <>
               {services.map((service, index) => (
                 <Motioned.content
@@ -50,7 +45,7 @@ const Services: React.FC = () => {
                     <div className="w-full lg:w-10/12 mx-auto">
                       <Link href={service.url}>
                         <a className="w-max mx-auto text-lg py-2 block text-center transition-all transform">
-                          Learn more about{' '}
+                          Explore{' '}
                           <GradientText className="font-bold capitalize font-pop">
                             <span>{service.title}</span>
                           </GradientText>
@@ -61,7 +56,7 @@ const Services: React.FC = () => {
                 </Motioned.content>
               ))}
             </>
-          </Motioned.container>
+          </Motioned.content>
         </>
       </Motioned.wrapper>
     </Motioned.content>
