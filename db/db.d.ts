@@ -20,3 +20,29 @@ declare interface MotionedWork {
   brief: string;
   url: string;
 }
+/**
+ * @name MotionedGoal
+ * @type {index: number;goal: string;description: string}
+ * @ref 'db/db.d.ts'
+ */
+declare interface MotionedGoal {
+  index: number;
+  goal: string;
+  description: string;
+}
+/**
+ * @name MotionedTeam
+ * @type {name: string; position: string; bio: string; links: {linkedin, github, personal}, image: string}
+ * @ref 'db/db.d.ts'
+ */
+declare interface MotionedTeam {
+  name: string;
+  position: string;
+  bio: string;
+  image: string | StaticImageData;
+  links: {
+    github?: string;
+    linkedin?: string;
+    personal?: string;
+  };
+}

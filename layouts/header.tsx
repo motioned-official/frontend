@@ -28,47 +28,102 @@ const Header: React.FC = () => {
       <aside
         onClick={onClickModalView}
         className={reactClassName(
-          'fixed w-full h-screen flex lg:hidden flex-col justify-center bg-black/50 backdrop-blur-md transition-all',
-          modalView ? 'z-50 opacity-100' : '-z-50 opacity-0'
+          'fixed w-full h-screen flex lg:hidden flex-col justify-end bg-black/50 backdrop-blur-md transition-all',
+          modalView ? 'opacity-100 z-40' : ' opacity-0 -z-40'
         )}
       >
-        <div
+        <span
           onClick={(e) => {
             e.stopPropagation();
           }}
-          className="h-5/6 bg-light w-10/12 max-w-md mx-auto rounded-xl shadow-2xl"
+          className={reactClassName(
+            'relative z-10 top-8 p-4 bg-dark/90 text-light shadow-xl w-max mx-auto rounded-full font-medium text-xl font-pop transition-all transform',
+            modalView ? 'translate-x-0' : '-translate-x-full'
+          )}
         >
-          <div className="flex justify-between items-center p-8 font-bold text-2xl">
-            <GradientText className="" />
-            <button
-              onClick={onClickModalView}
-              className="px-3 py-2 rounded-full bg-dark/90 text-light"
-            >
-              X
-            </button>
-          </div>
-          <ul className="flex flex-col space-y-4 p-8">
-            {Routes.map((route, index) => (
-              <Link href={route.href} key={index}>
-                <a
-                  className={reactClassName(
-                    'inline-block capitalize text-lg transition-all hover hover:text-dark/50',
-                    router.pathname.includes(route.href)
-                      ? 'pl-2 border-l-4 border-dark/90 font-bold'
-                      : 'pl-0 border-l-0 font-medium'
-                  )}
-                >
-                  {route.title}
-                </a>
-              </Link>
-            ))}
-          </ul>
-        </div>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-tangerine to-sunflower">
+            Connect with Us
+          </span>
+        </span>
+        <nav
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          className={reactClassName(
+            'relative z-0 transition-all transform flex justify-between items-center space-x-2 lg:space-x-3 p-8 pt-12  shadow-xl rounded-t-xl',
+            modalView ? 'translate-y-0 bg-light' : 'translate-y-full bg-light/0'
+          )}
+        >
+          <a
+            href="https://github.com/motioned-official"
+            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
+          >
+            <BsGithub />
+          </a>
+          <a
+            href="https://linkedin.com/company/motioned-official"
+            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
+          >
+            <BsLinkedin />
+          </a>
+          <a
+            href="https://instagram.com/motioned_official"
+            className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
+          >
+            <BsInstagram />
+          </a>
+        </nav>
       </aside>
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className={reactClassName(
+          'fixed transform h-max block lg:hidden bg-light w-10/12 max-w-md mx-auto rounded-xl shadow-2xl transition-all',
+          modalView
+            ? 'z-50 opacity-100 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2'
+            : '-z-50 opacity-0 top-1/2 left-0 -translate-x-full -translate-y-1/2'
+        )}
+      >
+        <div className="flex justify-between items-center p-8 font-bold text-2xl">
+          <h1 className="flex items-center">
+            <Link href="/">
+              <>
+                <a className="font-bold text-2xl transition-all hover lg:hover:bg-dark/50 bg-dark px-3 py-2 rounded-full text-light">
+                  M
+                </a>
+              </>
+            </Link>
+          </h1>
+          <button onClick={onClickModalView} className="text-dark">
+            X
+          </button>
+        </div>
+        <ul className="flex flex-col space-y-4 px-8 pb-8">
+          {Routes.map((route, index) => (
+            <Link href={route.href} key={index}>
+              <a
+                className={reactClassName(
+                  'inline-block capitalize text-lg transition-all hover hover:text-dark/50',
+                  router.pathname.includes(route.href)
+                    ? 'pl-2 border-l-4 border-dark/90 font-bold'
+                    : 'pl-0 border-l-0 font-medium'
+                )}
+              >
+                {route.title}
+              </a>
+            </Link>
+          ))}
+        </ul>
+      </div>
+
       <header
         className={reactClassName(
-          'top-0 w-full z-40 bg-transparent backdrop-blur-sm transition-all',
-          router.pathname !== '/' ? 'fixed' : 'sticky'
+          'top-0 w-full z-30 backdrop-blur-sm transition-all transform',
+          router.pathname !== '/' ? 'fixed' : 'sticky',
+          modalView
+            ? 'bg-light/0 -translate-y-full'
+            : 'bg-light/90 translate-y-0'
         )}
       >
         <section className="w-full px-8 py-6 lg:px-16 flex justify-between items-center">

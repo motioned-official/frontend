@@ -9,7 +9,7 @@ const MainlingList: React.FC = () => {
         <>
           <Motioned.content className="mb-16">
             <>
-              <h3 className="text-center text-3xl font-bold font-pop text-dark/90 mb-4">
+              <h3 className="text-center text-3xl md:text-4xl lg:text-5xl font-bold font-pop text-dark/90 mb-4">
                 # Get In <GradientText /> Mailing List.
               </h3>
               <p className="text-center text-xl lg:text-2xl text-dark/50">

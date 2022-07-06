@@ -17,7 +17,7 @@ const Work: React.FC = () => {
               <h3 className="flex flex-col space-y-1 mb-10">
                 <GradientText className="text-5xl md:text-6xl lg:text-7xl font-pop font-bold " />
                 <span className="text-2xl md:text-3xl lg:text-4xl capitalize lg:leading-[3rem]">
-                  Services that matters to your customers.
+                  Services that matters to your business.
                 </span>
               </h3>
               <div className="flex flex-col space-y-6">

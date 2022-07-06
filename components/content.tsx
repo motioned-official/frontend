@@ -20,7 +20,7 @@ const Content: React.FC<MotionedComponentProps> = ({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 0.85 }}
+      transition={{ duration: 0.65 }}
       viewport={{ once: true }}
       variants={ContentVariants}
       className={className ? className : ''}

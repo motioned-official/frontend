@@ -18,10 +18,9 @@ const Hero: React.FC = () => {
                 </span>
               </h2>
               <p className="font-sand font-medium text-2xl leading-9 lg:text-3xl lg:leading-10 max-w-xl">
-                Software Service Planning & Development Friend For Your
+                Software Service Planning & Development Companion For Your
                 Business,
               </p>
-              <div></div>
             </>
           </Motioned.content>
           <Motioned.content>
