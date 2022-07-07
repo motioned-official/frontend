@@ -33,7 +33,7 @@ const SEO: React.FC<SEOProps> = ({ title }) => {
         content="Web Design, Web Development, Web Engineering, Business Website, Portfolio Website, E-Commerce"
       />
       <title>
-        Success For Your Business & Clients Starts With Motioned{' '}
+        Motioned - Web Services & Open Source Software Development Agency{' '}
         {title === 'Home' ? '' : `| ${title}`}
       </title>
     </Head>
