@@ -26,14 +26,14 @@ const SEO: React.FC<SEOProps> = ({ title }) => {
       <meta name="theme-color" content="#ffffff" />
       <meta
         name="description"
-        content="Web design & engineering service team that provides web presence & solutions for small business clients."
+        content="Web design & service engineering team that provides web services & solutions for dreaming clients."
       />
       <meta
         name="keywords"
         content="Web Design, Web Development, Web Engineering, Business Website, Portfolio Website, E-Commerce"
       />
       <title>
-        Motioned - Web Services & Open Source Software Development Agency{' '}
+        Motioned - Design, Develop, Maintain, and Integrate{' '}
         {title === 'Home' ? '' : `| ${title}`}
       </title>
     </Head>

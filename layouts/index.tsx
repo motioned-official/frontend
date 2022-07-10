@@ -9,6 +9,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div
       id="layout"
       className={classify(
+        'relative',
         theme === 'light'
           ? 'bg-light-primary text-light-text'
           : 'bg-dark-primary text-dark-text'

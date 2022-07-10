@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   return (
     <header
       className={classify(
-        'transition-all sticky top-0 z-50 w-full',
+        'transition-all fixed top-0 z-50 w-full',
         theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
       )}
     >
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           <Link href="/">
             <a
               className={classify(
-                'transition-all text-light-text font-bold font-pop text-2xl',
+                'transition-all text-light-text font-bold font-sand text-2xl',
                 theme === 'light' ? 'text-light-text' : 'text-dark-text'
               )}
             >
@@ -58,44 +58,72 @@ const Header: React.FC = () => {
           </Link>
         </h1>
         <nav className="flex items-center space-x-4">
+          <nav className="hidden lg:flex py-1 items-center space-x-4 list-none">
+            {routes.map((route, index) => (
+              <li key={index}>
+                <Link href={route.href}>
+                  <a
+                    className={classify(
+                      'transition-all xl:text-lg',
+                      theme === 'light'
+                        ? 'text-light-text hover:text-light-secondary'
+                        : 'text-dark-text hover:text-light-support'
+                    )}
+                  >
+                    {route.text}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </nav>
           <button
             onClick={onClickChangeTheme}
             className={classify(
               'transition-all w-16 h-8 rounded-full relative p-1 flex ease-in-out',
               theme === 'light'
-                ? 'bg-dark-secondary justify-start'
-                : 'bg-light-secondary justify-end'
+                ? 'bg-light-secondary justify-start'
+                : 'bg-light-support justify-end'
             )}
           >
             <span
               className={classify(
-                'transition-all transform inline w-3/6 h-full rounded-full bg-gradient-to-br',
+                'transition-all transform inline w-3/6 h-full rounded-full',
                 theme === 'light'
-                  ? 'from-light-primary to-light-support rotate-0 left-0'
-                  : 'from-dark-primary to-dark-support rotate-180 right-0'
+                  ? 'bg-gradient-to-br from-dark-primary to-dark-secondary rotate-0 left-0'
+                  : 'bg-light-primary rotate-180 right-0'
               )}
             />
           </button>
           <button
             onClick={onClickMobileRouteView}
-            className={classify('transition-all inline-flex flex-col')}
+            className={classify(
+              'transition-all inline-flex flex-col lg:hidden',
+              mobileRouteView ? 'relative pl-8' : 'pl-0'
+            )}
           >
             <span
               className={classify(
-                'transition-all w-8 h-1',
-                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+                'transition-all transform w-8 h-0.5',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
+                mobileRouteView
+                  ? 'rotate-45 absolute right-0 top-1/2 -translate-y-1/2'
+                  : '-rotate-0 relative'
               )}
             />
             <span
               className={classify(
-                'transition-all w-8 h-1 my-1.5',
-                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+                'transition-all h-0.5 my-1.5',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
+                mobileRouteView ? 'w-0 opacity-0' : 'w-8 opacity-100'
               )}
             />
             <span
               className={classify(
-                'transition-all w-8 h-1',
-                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+                'transition-all w-8 h-0.5',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
+                mobileRouteView
+                  ? '-rotate-45 absolute right-0 bottom-1/2 translate-y-1/2'
+                  : '-rotate-0 relative'
               )}
             />
           </button>
