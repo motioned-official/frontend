@@ -1,23 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-	'./components/**/*.{ts,tsx}',
-	'./layouts/**/*.{ts,tsx}',
-	'./seo/**/*.{ts,tsx}',
-	'./pages/**/*.{ts,tsx}'
+    './theme/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './layouts/**/*.{ts,tsx}',
+    './seo/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        dark: '#111',
-        light: '#fff',
-        sunflower: '#FFCD00',
-        silver: '#EFEAE4',
-        tangerine: '#F79D85',
-        melon: '#A5D0A8',
-        ocean: '#8CB3D8'
-      }
+        'dark-primary': '#060930',
+        'dark-secondary': '#333456',
+        'dark-support': '#595B83',
+        'dark-text': '#fff',
+        'light-primary': '#fff',
+        'light-secondary': '#1e8bff',
+        'light-support': '#6955ff',
+        'light-text': '#212338',
+      },
     },
   },
   plugins: [],
-}
+};

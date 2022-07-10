@@ -1,207 +1,156 @@
-import GradientText from '@/components/gradient-text';
+import { classify } from '@motioned-official/react-functions';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import { BsLinkedin, BsGithub, BsInstagram } from 'react-icons/bs';
-import { reactClassName } from '../libs';
-const Routes: Array<{
-  title: string;
+import { useEffect, useState } from 'react';
+import { useTheme } from '@/theme/index';
+import { BsInstagram, BsLinkedin, BsGithub } from 'react-icons/bs';
+const routes: {
   href: string;
-}> = [
-  { href: '/', title: 'home' },
-  { href: '/about', title: 'about' },
-  { href: '/services', title: 'services' },
-  { href: '/works', title: 'works' },
-  { href: '/contact', title: 'contact' },
+  text: string;
+}[] = [
+  { href: '/', text: 'Home' },
+  { href: '/services', text: 'Services' },
+  { href: '/works', text: 'Works' },
+  { href: '/contact', text: 'Contact' },
 ];
+
 const Header: React.FC = () => {
   const router = useRouter();
-  const [modalView, setModalView] = useState<boolean>(false);
-  const onClickModalView = () => {
-    setModalView((cur) => !cur);
+  const [mobileRouteView, setMobileRouteView] = useState<boolean>(false);
+  const onClickMobileRouteView = () => {
+    setMobileRouteView((cur) => !cur);
   };
   useEffect(() => {
-    setModalView(false);
+    setMobileRouteView(false);
   }, [router]);
-  return (
-    <React.Fragment>
-      <aside
-        onClick={onClickModalView}
-        className={reactClassName(
-          'fixed w-full h-screen flex lg:hidden flex-col justify-end bg-black/50 backdrop-blur-md transition-all',
-          modalView ? 'opacity-100 z-40' : 'opacity-0 -z-40'
-        )}
-      >
-        <nav
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-          className={reactClassName(
-            'relative z-0 transition-all transform flex flex-col items-center space-x-2 lg:space-x-3 shadow-xl rounded-t-xl',
-            modalView ? 'translate-y-0 bg-light' : 'translate-y-full bg-light/0'
-          )}
-        >
-          <section className="w-full flex justify-between items-center mb-8 px-8 pt-8">
-            <a
-              href="https://github.com/motioned-official"
-              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
-            >
-              <BsGithub />
-            </a>
-            <a
-              href="https://linkedin.com/company/motioned-official"
-              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
-            >
-              <BsLinkedin />
-            </a>
-            <a
-              href="https://instagram.com/motioned_official"
-              className="transition-all text-dark text-3xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
-            >
-              <BsInstagram />
-            </a>
-          </section>
-          <section className="pb-8 px-8">
-            <GradientText className="font-pop text-2xl">
-              <span>Connect With Us.</span>
-            </GradientText>
-          </section>
-        </nav>
-      </aside>
-      <div
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-        className={reactClassName(
-          'fixed transform h-max block lg:hidden bg-light w-10/12 max-w-md mx-auto rounded-xl shadow-2xl transition-all',
-          modalView
-            ? 'z-50 opacity-100 top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2'
-            : '-z-50 opacity-0 top-1/2 left-0 -translate-x-full -translate-y-1/2'
-        )}
-      >
-        <div className="flex justify-between items-center p-8 font-bold text-2xl">
-          <h1 className="flex items-center">
-            <Link href="/">
-              <>
-                <a className="font-bold text-2xl transition-all hover lg:hover:bg-dark/50 bg-dark px-3 py-2 rounded-full text-light">
-                  M
-                </a>
-              </>
-            </Link>
-          </h1>
-          <button onClick={onClickModalView} className="text-dark">
-            X
-          </button>
-        </div>
-        <ul className="flex flex-col space-y-4 px-8 pb-8">
-          {Routes.map((route, index) => (
-            <Link href={route.href} key={index}>
-              <a
-                className={reactClassName(
-                  'inline-block capitalize text-lg transition-all hover hover:text-dark/50'
-                )}
-              >
-                {route.title}
-              </a>
-            </Link>
-          ))}
-        </ul>
-      </div>
 
-      <header
-        className={reactClassName(
-          'top-0 w-full z-30 backdrop-blur-sm transition-all transform',
-          router.pathname !== '/' ? 'fixed' : 'sticky',
-          router.pathname.includes('/services')
-            ? 'bg-dark/95'
-            : modalView
-            ? 'bg-light/0'
-            : 'bg-light/90',
-          modalView ? '-translate-y-full' : 'translate-y-0'
+  const { theme, setTheme } = useTheme();
+  const onClickChangeTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  };
+  return (
+    <header
+      className={classify(
+        'transition-all sticky top-0 z-50 w-full',
+        theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
+      )}
+    >
+      <section
+        className={classify(
+          'transiton-all relative z-10 flex justify-between items-center p-4',
+          theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
         )}
       >
-        <section className="w-full px-8 py-6 lg:px-16 flex justify-between items-center">
-          <h1>
-            <Link href="/">
-              <a className="font-bold text-2xl transition-all hover lg:hover:bg-dark/50 bg-dark px-3 py-2 rounded-full text-light">
-                M
-              </a>
-            </Link>
-          </h1>
-          <nav
-            className={reactClassName(
-              'flex items-center lg:hidden transition-all',
-              modalView ? 'opacity-0' : 'opacity-100'
+        <h1>
+          <Link href="/">
+            <a
+              className={classify(
+                'transition-all text-light-text font-bold font-pop text-2xl',
+                theme === 'light' ? 'text-light-text' : 'text-dark-text'
+              )}
+            >
+              Motioned
+            </a>
+          </Link>
+        </h1>
+        <nav className="flex items-center space-x-4">
+          <button
+            onClick={onClickChangeTheme}
+            className={classify(
+              'transition-all w-16 h-8 rounded-full relative p-1 flex ease-in-out',
+              theme === 'light'
+                ? 'bg-dark-secondary justify-start'
+                : 'bg-light-secondary justify-end'
             )}
           >
-            <button
-              onClick={onClickModalView}
-              className={reactClassName(
-                'px-5 pb-1 border-b-2 border-dotted text-lg font-sand font-semibold transition-all hover ',
-                router.pathname.includes('/services')
-                  ? 'border-light/75 text-light/75'
-                  : 'border-dark/50 text-dark/50'
+            <span
+              className={classify(
+                'transition-all transform inline w-3/6 h-full rounded-full bg-gradient-to-br',
+                theme === 'light'
+                  ? 'from-light-primary to-light-support rotate-0 left-0'
+                  : 'from-dark-primary to-dark-support rotate-180 right-0'
               )}
-            >
-              Menu
-            </button>
-          </nav>
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            {Routes.map((route, index) => (
-              <Link href={route.href} key={index}>
+            />
+          </button>
+          <button
+            onClick={onClickMobileRouteView}
+            className={classify('transition-all inline-flex flex-col')}
+          >
+            <span
+              className={classify(
+                'transition-all w-8 h-1',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+              )}
+            />
+            <span
+              className={classify(
+                'transition-all w-8 h-1 my-1.5',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+              )}
+            />
+            <span
+              className={classify(
+                'transition-all w-8 h-1',
+                theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary'
+              )}
+            />
+          </button>
+        </nav>
+      </section>
+      <section
+        className={classify(
+          'transition-all w-full transform absolute z-0 ease-out py-24 flex flex-col justify-center font-sand',
+          mobileRouteView ? 'h-60 translate-y-0' : 'h-0 -translate-y-full',
+          theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
+        )}
+      >
+        <ul className="flex flex-col space-y-4 px-8 my-4">
+          {routes.map((route, index) => (
+            <li key={index}>
+              <Link href={route.href}>
                 <a
-                  className={reactClassName(
-                    'inline-block capitalize text-lg font-medium transition-all hover hover:text-dark/50',
-                    router.pathname.includes('/services')
-                      ? 'text-light/80 hover:text-light/50'
-                      : 'hover:text-dark/50'
+                  className={classify(
+                    'transition-all',
+                    theme === 'light'
+                      ? 'text-dark-secondary'
+                      : 'text-light-secondary'
                   )}
                 >
-                  {route.title}
+                  {route.text}
                 </a>
               </Link>
-            ))}
-            <nav
-              className={reactClassName(
-                'flex items-center space-x-2 lg:space-x-3 transition-all rounded-full',
-                router.pathname.includes('/services')
-                  ? 'bg-melon p-4'
-                  : 'bg-transparent'
-              )}
-            >
-              <span
-                className={reactClassName(
-                  'font-pop font-medium transition-all',
-                  router.pathname.includes('/services')
-                    ? 'text-dark border-l-0 border-transparent pl-0'
-                    : 'pl-4 border-l-4 border-dark/70 text-dark/70'
-                )}
-              >
-                Connect With Us
-              </span>
-              <a
-                href="https://github.com/motioned-official"
-                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-dark"
-              >
-                <BsGithub />
-              </a>
-              <a
-                href="https://linkedin.com/company/motioned-official"
-                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-blue-500"
-              >
-                <BsLinkedin />
-              </a>
-              <a
-                href="https://instagram.com/motioned_official"
-                className="transition-all text-2xl transform hover hover:rotate-12 cursor-pointer hover:text-pink-400"
-              >
-                <BsInstagram />
-              </a>
-            </nav>
-          </nav>
-        </section>
-      </header>
-    </React.Fragment>
+            </li>
+          ))}
+        </ul>
+        <ul
+          className={classify(
+            'flex space-x-4 items-center px-8 pb-8 transition-all',
+            theme === 'light' ? 'text-dark-primary' : 'text-light-primary'
+          )}
+        >
+          <p className="font-pop font-medium text-lg">Connect With Us!</p>
+          <li>
+            <a href="https://linkedin.com/company/motioned-official">
+              <BsLinkedin className="text-xl" />
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/motioned_official">
+              <BsInstagram className="text-xl" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/motioned-official">
+              <BsGithub className="text-xl" />
+            </a>
+          </li>
+        </ul>
+      </section>
+    </header>
   );
 };
 export default Header;
