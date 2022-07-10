@@ -106,7 +106,7 @@ const MotionedHome: NextPage = () => {
                         : 'text-dark-support'
                     )}
                   >
-                    Mordern UI/UX Designs
+                    User effective UX research & UI implementation
                   </span>
                 </span>
                 <span className="flex flex-col items-center space-y-2">
