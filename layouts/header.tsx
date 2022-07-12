@@ -8,9 +8,9 @@ const routes: {
   href: string;
   text: string;
 }[] = [
-  { href: '/', text: 'Home' },
   { href: '/services', text: 'Services' },
   { href: '/works', text: 'Works' },
+  { href: '/roadmap', text: 'Road Map' },
   { href: '/contact', text: 'Contact' },
 ];
 
@@ -41,8 +41,7 @@ const Header: React.FC = () => {
     >
       <section
         className={classify(
-          'transiton-all relative z-10 flex justify-between items-center p-4',
-          theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
+          'transiton-all relative z-10 flex justify-between items-center p-4 w-full max-w-7xl mx-auto'
         )}
       >
         <h1>
@@ -58,16 +57,16 @@ const Header: React.FC = () => {
           </Link>
         </h1>
         <nav className="flex items-center space-x-4">
-          <nav className="hidden lg:flex py-1 items-center space-x-4 list-none">
+          <nav className="hidden lg:flex py-1 items-center space-x-4 xl:space-x-6 list-none">
             {routes.map((route, index) => (
               <li key={index}>
                 <Link href={route.href}>
                   <a
                     className={classify(
-                      'transition-all xl:text-lg',
+                      'transition-all hover:xl:bg-clip-text hover:xl:text-transparent hover:xl:bg-gradient-to-r hover:xl:from-light-secondary/50 hover:xl:to-light-support/50',
                       theme === 'light'
-                        ? 'text-light-text hover:text-light-secondary'
-                        : 'text-dark-text hover:text-light-support'
+                        ? 'text-light-text/75'
+                        : 'text-dark-text'
                     )}
                   >
                     {route.text}
@@ -131,9 +130,15 @@ const Header: React.FC = () => {
       </section>
       <section
         className={classify(
-          'transition-all w-full transform absolute z-0 ease-out py-24 flex flex-col justify-center font-sand',
-          mobileRouteView ? 'h-60 translate-y-0' : 'h-0 -translate-y-full',
-          theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
+          'transition-all w-full transform absolute z-0 ease-in flex lg:hidden flex-col justify-center font-sand',
+          mobileRouteView
+            ? 'translate-y-0 top-0 py-24 opacity-100'
+            : 'py-0 -translate-y-full -top-16 opacity-0',
+          theme === 'light'
+            ? mobileRouteView
+              ? 'bg-light-primary/100'
+              : 'bg-transparent'
+            : 'bg-dark-primary'
         )}
       >
         <ul className="flex flex-col space-y-4 px-8 my-4">

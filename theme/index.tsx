@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ClientTheme: ClientThemeContext = createContext({} as any);
 
 const ClientThemeProvider = ({ children }: { children: JSX.Element }) => {
-  const [theme, setTheme] = useState<'dark' | 'light'>('light');
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   useEffect(() => {
     console.log(`App is running with theme:${theme}!`);
   }, [theme]);
