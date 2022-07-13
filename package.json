@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@motioned-official/react-components": "^1.0.0",
-    "@motioned-official/react-functions": "^1.0.2",
+    "@motioned-official/react-functions": "^1.0.4",
     "framer-motion": "^6.3.16",
     "next": "12.2.0",
     "react": "18.2.0",

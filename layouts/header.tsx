@@ -1,4 +1,4 @@
-import { classify } from '@motioned-official/react-functions';
+import { reactClassNames } from '@motioned-official/react-functions';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -34,20 +34,21 @@ const Header: React.FC = () => {
   };
   return (
     <header
-      className={classify(
+      className={reactClassNames(
         'transition-all fixed top-0 z-50 w-full',
         theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
       )}
     >
       <section
-        className={classify(
-          'transiton-all relative z-10 flex justify-between items-center p-4 w-full max-w-7xl mx-auto'
+        className={reactClassNames(
+          'transiton-all relative z-10 flex justify-between items-center p-4 w-full max-w-7xl mx-auto',
+          theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
         )}
       >
         <h1>
           <Link href="/">
             <a
-              className={classify(
+              className={reactClassNames(
                 'transition-all text-light-text font-bold font-sand text-2xl',
                 theme === 'light' ? 'text-light-text' : 'text-dark-text'
               )}
@@ -62,7 +63,7 @@ const Header: React.FC = () => {
               <li key={index}>
                 <Link href={route.href}>
                   <a
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all hover:xl:bg-clip-text hover:xl:text-transparent hover:xl:bg-gradient-to-r hover:xl:from-light-secondary/50 hover:xl:to-light-support/50',
                       theme === 'light'
                         ? 'text-light-text/75'
@@ -77,7 +78,7 @@ const Header: React.FC = () => {
           </nav>
           <button
             onClick={onClickChangeTheme}
-            className={classify(
+            className={reactClassNames(
               'transition-all w-16 h-8 rounded-full relative p-1 flex ease-in-out',
               theme === 'light'
                 ? 'bg-light-secondary justify-start'
@@ -85,7 +86,7 @@ const Header: React.FC = () => {
             )}
           >
             <span
-              className={classify(
+              className={reactClassNames(
                 'transition-all transform inline w-3/6 h-full rounded-full',
                 theme === 'light'
                   ? 'bg-gradient-to-br from-dark-primary to-dark-secondary rotate-0 left-0'
@@ -95,13 +96,13 @@ const Header: React.FC = () => {
           </button>
           <button
             onClick={onClickMobileRouteView}
-            className={classify(
+            className={reactClassNames(
               'transition-all inline-flex flex-col lg:hidden',
               mobileRouteView ? 'relative pl-8' : 'pl-0'
             )}
           >
             <span
-              className={classify(
+              className={reactClassNames(
                 'transition-all transform w-8 h-0.5',
                 theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
                 mobileRouteView
@@ -110,14 +111,14 @@ const Header: React.FC = () => {
               )}
             />
             <span
-              className={classify(
+              className={reactClassNames(
                 'transition-all h-0.5 my-1.5',
                 theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
                 mobileRouteView ? 'w-0 opacity-0' : 'w-8 opacity-100'
               )}
             />
             <span
-              className={classify(
+              className={reactClassNames(
                 'transition-all w-8 h-0.5',
                 theme === 'light' ? 'bg-dark-primary' : 'bg-light-primary',
                 mobileRouteView
@@ -129,10 +130,10 @@ const Header: React.FC = () => {
         </nav>
       </section>
       <section
-        className={classify(
-          'transition-all w-full transform absolute z-0 ease-in flex lg:hidden flex-col justify-center font-sand',
+        className={reactClassNames(
+          'transition-all w-full h-max transform absolute z-0 ease-in flex lg:hidden flex-col justify-center font-sand',
           mobileRouteView
-            ? 'translate-y-0 top-0 py-24 opacity-100'
+            ? 'translate-y-0 top-0 pt-24 pb-8 opacity-100'
             : 'py-0 -translate-y-full -top-16 opacity-0',
           theme === 'light'
             ? mobileRouteView
@@ -141,12 +142,12 @@ const Header: React.FC = () => {
             : 'bg-dark-primary'
         )}
       >
-        <ul className="flex flex-col space-y-4 px-8 my-4">
+        <ul className="flex flex-col space-y-4 px-8 mb-4">
           {routes.map((route, index) => (
             <li key={index}>
               <Link href={route.href}>
                 <a
-                  className={classify(
+                  className={reactClassNames(
                     'transition-all',
                     theme === 'light'
                       ? 'text-dark-secondary'
@@ -160,7 +161,7 @@ const Header: React.FC = () => {
           ))}
         </ul>
         <ul
-          className={classify(
+          className={reactClassNames(
             'flex space-x-4 items-center px-8 pb-8 transition-all',
             theme === 'light' ? 'text-dark-primary' : 'text-light-primary'
           )}

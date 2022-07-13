@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { Content, Section, Wrap } from '@motioned-official/react-components';
 import React from 'react';
 import SEO from '@/seo/index';
-import { classify } from '@motioned-official/react-functions';
+import { reactClassNames } from '@motioned-official/react-functions';
 import { useTheme } from '../theme';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ const MotionedHome: NextPage = () => {
     <React.Fragment>
       <SEO title="Home" />
       <Section
-        className={classify(
+        className={reactClassNames(
           'transition-all w-full relative min-h-screen flex flex-col justify-center',
           theme === 'light'
             ? 'bg-light-primary text-light-text'
@@ -48,7 +48,7 @@ const MotionedHome: NextPage = () => {
                 </p>
                 <div className="flex flex-col items-center">
                   <button
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all px-5 py-3 rounded-lg text-lg font-medium font-sand lg:hover:opacity-75',
                       theme === 'light'
                         ? 'bg-light-secondary text-light-primary'
@@ -64,7 +64,7 @@ const MotionedHome: NextPage = () => {
         </>
       </Section>
       <Section
-        className={classify(
+        className={reactClassNames(
           'transition-all w-full',
           theme === 'light' ? 'bg-light-primary' : 'bg-dark-primary'
         )}
@@ -74,7 +74,7 @@ const MotionedHome: NextPage = () => {
             <Content displayType="block" className="relative -mb-4">
               <>
                 <div
-                  className={classify(
+                  className={reactClassNames(
                     'transition-all px-8 pb-16 pt-28 w-full max-w-4xl mx-auto',
                     theme === 'light' ? 'text-light-text' : 'text-dark-text'
                   )}
@@ -82,7 +82,7 @@ const MotionedHome: NextPage = () => {
                   <h3 className="font-bold font-sand text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center mb-3">
                     We&apos;re{' '}
                     <span
-                      className={classify(
+                      className={reactClassNames(
                         'transition-all bg-clip-text text-transparent bg-gradient-to-r from-light-secondary to-light-support'
                       )}
                     >
@@ -102,7 +102,7 @@ const MotionedHome: NextPage = () => {
               <ul className="grid grid-cols-2 lg:grid-cols-4 gap-8 xl:gap-16 w-full max-w-7xl mx-auto">
                 <span className="flex flex-col items-center space-y-2 lg:space-y-4">
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all font-sand text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br',
                       theme === 'light'
                         ? 'from-light-secondary to-light-support'
@@ -112,7 +112,7 @@ const MotionedHome: NextPage = () => {
                     Design
                   </span>
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all text-sm lg:text-base text-center',
                       theme === 'light'
                         ? 'text-light-text/50'
@@ -124,7 +124,7 @@ const MotionedHome: NextPage = () => {
                 </span>
                 <span className="flex flex-col items-center space-y-2 lg:space-y-4">
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all font-sand text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br',
                       theme === 'light'
                         ? 'from-light-secondary to-light-support'
@@ -134,7 +134,7 @@ const MotionedHome: NextPage = () => {
                     Develop
                   </span>
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all text-sm lg:text-base text-center',
                       theme === 'light'
                         ? 'text-light-text/50'
@@ -146,7 +146,7 @@ const MotionedHome: NextPage = () => {
                 </span>
                 <span className="flex flex-col items-center space-y-2 lg:space-y-4">
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all font-sand text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br',
                       theme === 'light'
                         ? 'from-light-secondary to-light-support'
@@ -156,7 +156,7 @@ const MotionedHome: NextPage = () => {
                     Maintain
                   </span>
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all text-sm lg:text-base text-center',
                       theme === 'light'
                         ? 'text-light-text/50'
@@ -168,7 +168,7 @@ const MotionedHome: NextPage = () => {
                 </span>
                 <span className="flex flex-col items-center space-y-2 lg:space-y-4">
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all font-sand text-3xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-br',
                       theme === 'light'
                         ? 'from-light-secondary to-light-support'
@@ -178,7 +178,7 @@ const MotionedHome: NextPage = () => {
                     Integrate
                   </span>
                   <span
-                    className={classify(
+                    className={reactClassNames(
                       'transition-all text-sm lg:text-base text-center',
                       theme === 'light'
                         ? 'text-light-text/50'
@@ -194,7 +194,7 @@ const MotionedHome: NextPage = () => {
         </Wrap>
       </Section>
       <Section
-        className={classify(
+        className={reactClassNames(
           'transition-all w-full',
           theme === 'light' ? 'bg-[whitesmoke]' : 'bg-[#222]'
         )}
@@ -274,7 +274,14 @@ const MotionedHome: NextPage = () => {
           </>
         </Wrap>
       </Section>
-      <Section className="w-full flex flex-col justify-center bg-gradient-to-r from-light-secondary to-light-support">
+      <Section
+        className={reactClassNames(
+          'w-full flex flex-col justify-center transition-all',
+          theme === 'light'
+            ? 'bg-gradient-to-r from-light-secondary to-light-support'
+            : ''
+        )}
+      >
         <Wrap className="px-8 py-28 max-w-7xl mx-auto w-full">
           <>
             <Content
@@ -282,18 +289,18 @@ const MotionedHome: NextPage = () => {
               className="w-full max-w-2xl mx-auto text-light-primary"
             >
               <>
-                <h5 className="font-thin text-sm lg:text-base xl:text-lg text-center text-light mb-4">
-                  &rarr; Deal Breaker &larr;
+                <h5 className="font-thin text-base lg:text-lg xl:text-xl text-center text-light mb-4">
+                  Worrying about paying it all at once?
                 </h5>
-                <h3 className="text-center font-bold font-sand text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-14">
+                <h3 className="text-center font-bold font-sand text-2xl md:text-3xl lg:text-4xl xl:text-5xl mb-8">
                   Flexible Prcing Options.
                 </h3>
                 <div
-                  className={classify(
-                    'transition-all p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:flex-row rounded-xl shadow-2xl shadow-dark-primary/50 backdrop-blur-sm mb-8',
+                  className={reactClassNames(
+                    'transition-all p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:flex-row rounded-xl shadow-2xl  backdrop-blur-sm mb-8',
                     theme === 'light'
-                      ? 'bg-light-primary/10'
-                      : 'bg-dark-primary/10'
+                      ? 'bg-light-primary/75 text-dark-secondary shadow-dark-primary/50'
+                      : 'bg-light-support shadow-dark-secondary'
                   )}
                 >
                   <article className="flex flex-col items-center space-y-2">
@@ -309,11 +316,29 @@ const MotionedHome: NextPage = () => {
                     </h4>
                   </article>
                 </div>
-                <div>
+                <div className="mt-8 mb-6">
+                  <p className="text-center font-medium font-pop">
+                    Start Working With <span>Motioned</span> Today!
+                  </p>
+                </div>
+                <div className="w-full md:max-w-[275px] mx-auto mb-12">
+                  <img
+                    className={reactClassNames('transition-all')}
+                    src="content/Flexible_Price.png"
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col items-center">
                   <Link href="/">
-                    <a className="block underline-offset-3 underline w-full text-base lg:text-lg text-center font-medium font-sand">
-                      Learn more about flexible pricing options for your future
-                      project.
+                    <a
+                      className={reactClassNames(
+                        'block px-8 py-3 shadow-xl rounded-full text-base lg:text-lg text-center font-bold font-sand transition-all',
+                        theme === 'light'
+                          ? 'bg-light-primary/75 text-dark-secondary shadow-dark-primary/20'
+                          : 'text-light-primary shadow-dark-secondary bg-light-support'
+                      )}
+                    >
+                      Contact Our Sales
                     </a>
                   </Link>
                 </div>

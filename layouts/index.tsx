@@ -1,4 +1,4 @@
-import { classify } from '@motioned-official/react-functions';
+import { reactClassNames } from '@motioned-official/react-functions';
 import { useTheme } from '../theme';
 import Footer from './footer';
 import Header from './header';
@@ -8,7 +8,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div
       id="layout"
-      className={classify(
+      className={reactClassNames(
         'relative',
         theme === 'light'
           ? 'bg-light-primary text-light-text'
